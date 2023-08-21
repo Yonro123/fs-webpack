@@ -1,0 +1,33 @@
+@import "../variables";
+@import "../mixins";
+.header {
+	width: 100%;
+	height: $height;
+	padding: 30px 0;
+	background-color: $mainBGColor;
+	.container {
+		@include flex($justify: space-between);
+		@include container();
+	}
+	.menu {
+		@include flex($justify: space-between);
+		gap: 50px;
+		color: $mainTextColor;
+		font-size: 14px;
+		@include _1280 {
+			gap: 20px;
+		}
+		@include _980 {
+			display: none;
+		}
+	}
+	.button {
+		height: max-content;
+		padding: 9px 15px;
+		background-color: #018abe;
+		color: $mainTextColor;
+		font-size: 13px;
+		font-weight: 600;
+		border-radius: 3px;
+	}
+}

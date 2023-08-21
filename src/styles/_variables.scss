@@ -1,0 +1,29 @@
+$height: 100px;
+$mainBGColor: hsla(200, 38%, 14%, 1);
+$mainTextColor: hsla(0, 0%, 100%, 1);
+
+@mixin _1440 {
+	@media (max-width: 1440px) {
+		@content;
+	}
+}
+@mixin _1280 {
+	@media (max-width: 1280px) {
+		@content;
+	}
+}
+@mixin _980 {
+	@media (max-width: 980px) {
+		@content;
+	}
+}
+@mixin _767 {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+@mixin _480 {
+	@media (max-width: 480px) {
+		@content;
+	}
+}

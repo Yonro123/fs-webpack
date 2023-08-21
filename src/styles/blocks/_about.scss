@@ -1,0 +1,55 @@
+@import "../variables";
+.about {
+	padding: 150px 40px;
+	.container {
+		width: 100%;
+		max-width: 1076px;
+		margin: 0 auto;
+	}
+	.titleWrapper {
+		margin-bottom: 50px;
+	}
+	.aboutColumn {
+		display: flex;
+		align-items: center;
+		gap: 84px;
+		padding: 50px 0;
+		@include _980 {
+			flex-direction: column;
+			gap: 20px;
+		}
+		.aboutImg {
+			width: 526px;
+			height: 365px;
+			@include _980 {
+				width: 100%;
+				order: -1;
+				height: 400px;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			@include _767 {
+				height: 300px;
+			}
+		}
+		.aboutTitle {
+			margin-bottom: 30px;
+			color: $mainTextColor;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 140%;
+			@include _980 {
+				text-align: center;
+			}
+		}
+		.aboutText {
+			color: rgba(255, 255, 255, 0.509);
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 140%;
+			text-align: justify;
+		}
+	}
+}

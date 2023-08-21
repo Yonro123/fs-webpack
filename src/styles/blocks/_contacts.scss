@@ -1,0 +1,95 @@
+@import "../variables";
+@import "../mixins";
+.contacts {
+	padding: 50px 0;
+	.container {
+		@include container();
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 290px);
+		column-gap: 48px;
+		row-gap: 24px;
+		@include _980 {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, 290px);
+		}
+		@include _767 {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(3, 290px);
+		}
+	}
+	&__map {
+		grid-column: span 2;
+		grid-row: span 2;
+		border-radius: 10px;
+		overflow: hidden;
+		@include _767 {
+			grid-column: span 1;
+			grid-row: span 1;
+		}
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding: 35px 45px;
+		background-color: hsla(197, 99%, 37%, 1);
+		border-radius: 10px;
+		h3 {
+			margin-bottom: 20px;
+			color: $mainTextColor;
+			font-size: 24px;
+			font-weight: 700;
+			@include _980 {
+				font-size: 20px;
+			}
+		}
+		ul {
+			display: grid;
+			align-items: center;
+			gap: 20px;
+			margin-bottom: 30px;
+			font-size: 14px;
+			color: $mainTextColor;
+			flex-grow: 1;
+			@include _767 {
+				gap: 10px;
+			}
+			li {
+				position: relative;
+				padding-left: 40px;
+			}
+			li::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 20px;
+				height: 20px;
+				transform: translate(0, -50%);
+			}
+			.first::before {
+				background: url(/src/assets/images/carbon_location-filled.svg) no-repeat;
+			}
+			.second::before {
+				background: url(/src/assets/images/Spb_metro_logo\ 1.svg) no-repeat;
+			}
+			.third::before {
+				background: url(/src/assets/images/bi_calendar-week-fill.svg) no-repeat;
+			}
+		}
+		.card__btn {
+			width: max-content;
+			padding: 9px 15px;
+			color: hsla(197, 99%, 37%, 1);
+			background-color: #fff;
+		}
+	}
+}
